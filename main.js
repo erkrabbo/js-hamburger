@@ -1,9 +1,9 @@
-let togglerOpen = document.querySelector(".fa-bars");
-let toggleClose = document.querySelector(".close");
+let togglerOpen = document.querySelector(".header-right>a:last-child");
+let togglerClose = document.querySelector(".close");
 
 togglerOpen.addEventListener('click', openMenu);
 
-toggleClose.addEventListener('click', closeMenu);
+togglerClose.addEventListener('click', closeMenu);
 
 function openMenu(){
     let element = document.querySelector(".hamburger-menu");
