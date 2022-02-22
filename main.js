@@ -1,7 +1,7 @@
 let togglerOpen = document.querySelector(".header-right>a:last-child");
 let togglerClose = document.querySelector(".close");
 
-let viewPort = window.innerWidth;
+let viewPort;
 
 let logo = document.querySelector(".header-left");
 
@@ -9,12 +9,11 @@ logo.style = `display: flex; align-items: center; justify-content: center;`
 
 
 window.addEventListener("load", logoImg);
-
 window.addEventListener("resize", logoImg);
 
-togglerOpen.addEventListener('click', openMenu);
+togglerOpen.addEventListener('click', openCloseMenu);
 
-togglerClose.addEventListener('click', closeMenu);
+togglerClose.addEventListener('click', openCloseMenu);
 
 function logoImg(){
     viewPort = window.innerWidth;
@@ -76,14 +75,8 @@ function mobileLogo(){
             fill="white" />
     </svg>`
 }
-function openMenu(){
+function openCloseMenu(){
     let element = document.querySelector(".hamburger-menu");
 
-    element.classList.add("active");
-}
-
-function closeMenu(){
-    let element= document.querySelector(".hamburger-menu");
-
-    element.classList.remove("active");
+    element.classList.toggle("active");
 }
